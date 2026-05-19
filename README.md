@@ -11,4 +11,4 @@ CSCI 275
 | Muhammad Haseeb | 815587 |
 | Khadija Meem | 817024 |
 | Gurpreet Kaur | 816321 |
-| Nischal Bhandari |  |
+| Nischal Bhandari | 816747 |
