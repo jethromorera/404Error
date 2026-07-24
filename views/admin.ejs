@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<div class="container wide">
+  <h1>Admin dashboard</h1>
+  <p class="muted">Authorization & Roles — only visible to accounts with the "admin" role</p>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Joined</th></tr>
+    <% users.forEach(u => { %>
+      <tr>
+        <td><%= u.id %></td>
+        <td><%= u.name %></td>
+        <td><%= u.email %></td>
+        <td><span class="badge <%= u.role === 'admin' ? 'admin' : '' %>"><%= u.role %></span></td>
+        <td><%= new Date(u.created_at).toLocaleDateString() %></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+</body>
+</html>

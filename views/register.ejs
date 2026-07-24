@@ -1,0 +1,18 @@
+<%- include('partials/head') %>
+<div class="container">
+  <h1>Create an account</h1>
+  <p class="muted">Registration & Onboarding</p>
+  <% if (error) { %><div class="err"><%= error %></div><% } %>
+  <form method="POST" action="/register">
+    <label>Full name</label>
+    <input type="text" name="name" required />
+    <label>Email</label>
+    <input type="email" name="email" required />
+    <label>Password</label>
+    <input type="password" name="password" required minlength="6" />
+    <button type="submit">Sign up</button>
+  </form>
+  <p class="muted" style="margin-top:16px">Already have an account? <a class="link" href="/login">Log in</a></p>
+</div>
+</body>
+</html>

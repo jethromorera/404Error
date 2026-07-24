@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+<div class="container">
+  <h1>Your profile</h1>
+  <p class="muted">User Profile · <span class="badge <%= user.role === 'admin' ? 'admin' : '' %>"><%= user.role %></span></p>
+  <% if (saved) { %><div class="msg">Profile updated!</div><% } %>
+  <form method="POST" action="/profile">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= user.name %>" required />
+    <label>Email (read-only)</label>
+    <input type="email" value="<%= user.email %>" disabled />
+    <label>Avatar URL</label>
+    <input type="text" name="avatar_url" value="<%= user.avatar_url || '' %>" placeholder="https://..." />
+    <label>Bio</label>
+    <textarea name="bio" placeholder="Tell other reviewers about yourself..."><%= user.bio || '' %></textarea>
+    <button type="submit">Save changes</button>
+  </form>
+  <p class="muted" style="margin-top:16px">Member since <%= new Date(user.created_at).toLocaleDateString() %></p>
+</div>
+</body>
+</html>
