@@ -56,7 +56,7 @@ router.get('/reset-password/:token', async (req, res) => {
 
 router.post('/reset-password/:token', async (req, res) => {
   const { token } = req.params;
-  const { password } = req.body;
+  const { password, confirm_password } = req.body;
 
   const result = await pool.query(
     'SELECT id FROM users WHERE reset_token = $1 AND reset_token_expires > NOW()',
@@ -69,6 +69,9 @@ router.post('/reset-password/:token', async (req, res) => {
   }
   if (!password || password.length < 6) {
     return res.render('reset-password', { token, error: 'Password must be at least 6 characters.' });
+  }
+  if (password !== confirm_password) {
+    return res.render('reset-password', { token, error: 'Passwords do not match.' });
   }
 
   const hash = await bcrypt.hash(password, 10);

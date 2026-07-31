@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => res.redirect(req.session.userId ? '/profile' : '/login'));
+app.get('/', (req, res) => res.render('home'));
 
 app.use(authRoutes);
 app.use(passwordRoutes);
