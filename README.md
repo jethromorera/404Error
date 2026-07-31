@@ -61,7 +61,7 @@ Then open **http://localhost:3000**
 - Admin account (pre-seeded): `admin@demo.com` / `admin123`
 - Or click "Register" to create a normal user account live during your demo.
 
-## What to show in your presentation
+
 1. Visit **http://localhost:3000** logged out → shows the Guest home page
 2. **Register** a new account, including a profile photo (crop it) and
    accepting the ToS checkbox → shows Registration & Onboarding
@@ -90,7 +90,7 @@ public/js/avatar-crop.js        - client-side photo upload + crop widget
 views/*.ejs                      - all pages
 ```
 
-## If something breaks live
+## If something breaks:
 - `npm run initdb` is safe to re-run (it checks before inserting the admin).
 - If PostgreSQL connection fails, double check `DATABASE_URL` in `.env`
   matches your actual Postgres username/password/port.
