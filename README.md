@@ -7,25 +7,25 @@ control for the restaurant review platform.
 ## User classes
 | Class | How it's assigned |
 |---|---|
-| Guest | Anyone not logged in — can browse without an account |
+| Guest | Anyone not logged in, can browse without an account |
 | Registered User | Default role, assigned automatically on signup |
 | Reviewer | Assigned by an admin via the admin dashboard |
 | Moderator | Assigned by an admin via the admin dashboard |
-| Admin | Full access — can assign roles and ban accounts |
+| Admin | Full access, can assign roles and ban accounts |
 
 ## Features
-1. **Registration & Onboarding** — full name, email, password, optional
+1. **Registration & Onboarding** : full name, email, password, optional
    profile photo (upload + crop), Terms of Service checkbox
-2. **Email Verification** — simulated verification email with a 24-hour
+2. **Email Verification** : simulated verification email with a 24-hour
    token link, a "check your inbox" confirmation page, a verified/welcome
    landing page, an expired-link page, and a resend option
-3. **Authentication & Sessions** — login/logout, sessions persisted in
+3. **Authentication & Sessions** : login/logout, sessions persisted in
    PostgreSQL, banned accounts blocked at login
-4. **Password Management** — forgot password (email only) and reset
+4. **Password Management** : forgot password (email only) and reset
    password (new password + confirm, accessed via a time-limited link)
-5. **User Profile** — name, bio, location, profile photo with client-side
+5. **User Profile** : name, bio, location, profile photo with client-side
    crop/zoom (no external library — plain canvas)
-6. **Authorization & Roles** — admin dashboard listing all users with a
+6. **Authorization & Roles** : admin dashboard listing all users with a
    role dropdown (Registered User / Reviewer / Moderator / Admin) and a
    ban/unban toggle per account
 
