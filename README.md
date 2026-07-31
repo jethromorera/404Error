@@ -1,4 +1,4 @@
-# Restaurant Reviews — User Management & Authentication
+# Restaurant Review App: User Management & Authentication
 
 A complete user account system covering registration, login, password
 recovery, profile management, email verification, and role-based access
